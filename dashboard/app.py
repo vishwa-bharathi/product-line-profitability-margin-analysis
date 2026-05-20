@@ -151,7 +151,7 @@ def dark_layout(fig, title="", height=340):
 # ── Data loading & processing ──────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    df = pd.read_csv("cleaned_data.csv")
+    df = pd.read_csv("data/cleaned/cleaned_data.csv")
     df.columns = df.columns.str.replace(" ", "_").str.lower()
     df["order_date"] = pd.to_datetime(df["order_date"], dayfirst=True, errors = "coerce")
     df["ship_date"]  = pd.to_datetime(df["ship_date"],  dayfirst=True, errors = "coerce")
